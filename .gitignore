@@ -11,6 +11,8 @@
 # generated files
 bin/
 gen/
+app/hs_err*
+app/replay*
 
 # Local configuration file (sdk path, etc)
 local.properties

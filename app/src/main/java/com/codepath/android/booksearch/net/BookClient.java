@@ -18,6 +18,8 @@ public class BookClient {
         return API_BASE_URL + relativeUrl;
     }
 
+
+
     // Method for accessing the search API
     public void getBooks(final String query, JsonHttpResponseHandler handler) {
         try {
@@ -26,5 +28,10 @@ public class BookClient {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
+
+    public void getBookDetails(final String openLibraryId, JsonHttpResponseHandler handler) {
+            String url = "https://openlibrary.org/api/books?bibkeys=OLID:" + openLibraryId + "&jscmd=data&format=json";
+            client.get(url, handler);
     }
 }
